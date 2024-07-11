@@ -1,0 +1,50 @@
+ body{
+    margin: 0px;
+    padding: 0px;
+ }
+ 
+ .first_page{
+    margin: 5% 10%;
+    display: flex;
+    justify-content: space-between ;
+ }
+ 
+ .left_of_first_page{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+ }
+.award_section_of_first_page{
+    font-size: 30px;
+    margin-top: 120px;;
+    color: #FF3147;
+    font-family: 'Roboto', sans-serif;
+     
+}
+.digit_section_of_first_page{
+    margin-top: 15px;
+    font-size: 55px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+.para_section_of_first_page{
+    margin-top: 30px;
+    font-size: 16px;
+     
+}
+ .right_of_first_page{
+    width: 35%;
+    display: flex;
+    justify-content: right;
+ }
+ .btn_of_first_page{
+    margin-top: 35px;
+    width: 160px;
+    height: 50px;
+    border: 1px solid transparent;
+    background-color: #FF3147  ;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    opacity: 1;
+    color: white;
+ }
