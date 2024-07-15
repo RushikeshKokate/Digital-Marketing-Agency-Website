@@ -46,25 +46,25 @@ function readMore(){
 const cardData = [
     {
         id: 1,
-        img: "images/new1.svg",
+        img: "./images/new1.svg",
         text: "Clarified Vision & Target",
         para: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy."
     },
     {
         id: 2,
-        img: "images/new2.svg",
+        img: "./images/new2.svg",
         text: "High Performance",
         para: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy."
     },
     {
         id: 3,
-        img: "images/new3.svg",
+        img: "./images/new3.svg",
         text: "Maintain Security",
         para: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy."
     },
     {
         id: 4,
-        img: "images/new4.svg",
+        img: "./images/new4.svg",
         text: "Better Strategy & Quality",
         para: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy."
     }
@@ -95,13 +95,13 @@ cardData.forEach(card => {
 
 const imgTags = document.querySelector('.img-card');
 const imgSrc = document.createElement("img");
-imgSrc.src = "images/room.jpg";
+imgSrc.src = "./images/room.jpg";
        
 function functionChange1() {
     const imgTags = document.querySelector('.img-card');
      imgTags.innerHTML=""
             const imgSrc = document.createElement("img");
-            imgSrc.src = "images/nature.jpg";
+            imgSrc.src = "./images/nature.jpg";
             imgTags.appendChild(imgSrc);
    
 }
@@ -109,7 +109,7 @@ function functionChange2() {
     const imgTags = document.querySelector('.img-card');
      imgTags.innerHTML=""
             const imgSrc = document.createElement("img");
-            imgSrc.src = "images/image.png";
+            imgSrc.src = "./images/image.png";
             imgTags.appendChild(imgSrc);
    
 }
@@ -117,7 +117,7 @@ function functionChange3() {
     const imgTags = document.querySelector('.img-card');
     imgTags.innerHTML=""
             const imgSrc = document.createElement("img");
-            imgSrc.src = "images/room.jpg";
+            imgSrc.src = "./images/room.jpg";
             imgTags.appendChild(imgSrc);
    
 }
