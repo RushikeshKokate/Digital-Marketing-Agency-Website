@@ -7,22 +7,320 @@
     <link rel="stylesheet" href="./index.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap');
+  .custom-input {
+      border-left: 2px solid transparent;
+      border-right: 2px solid transparent;
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid #a2a3b399;
+      border-radius: 0;
+      color: #7c7e9199;
+      height: 27px;
+    }
+    
+    .custom-input::placeholder {
+      color: #6F718F99;  
+    }
+    
+    .label {
+      color: #7c7e9199;
+    }
+    
+    .name-input {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .form-check-input {
+      border: 2px solid #FF3147;
+    }
+    
+    .input-fields {
+      padding: 20px;
+      
+    }
+    
+    .header {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      font-weight: bold;
+     font-size: 25px ;   
+    }
+    
+    .close-btn {
+      margin-left: auto;
+      cursor: pointer;
+      font-size: 24px;
+    }
+    
+    .btn_of_first_pop {
+      width: 100%;
+      height: 50px;
+      background-color: #FF3147;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      opacity: 1;
+      color: white;
+    }.form-check-label{
+        color: #616678;
+    }
+    .carousel-item {
+      display: flex;
+      flex-direction: row;
+    }
+ 
+</style>
 <body>
  
 <div class="first_page">
-        <div class="left_of_first_page">
-           <span class="award_section_of_first_page">AWARD WINNING</span >
-           <span class="digit_section_of_first_page">DIGITAL MARKETING <br/>AGENCY</span>
-           <p class="para_section_of_first_page">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis neque quod <br/>
-             sunt aliquam voluptatibus consectetur quo ipsam at totam, ipsam at at<br/>
+    <div class="left_of_first_page">
+        <span class="award_section_of_first_page">AWARD WINNING</span >
+        <span class="digit_section_of_first_page">DIGITAL MARKETING <br/>AGENCY</span>
+        <p class="para_section_of_first_page">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis neque quod <br/>
+            sunt aliquam voluptatibus consectetur quo ipsam at totam, ipsam at at<br/>
             eius est sint. </p>
-            <button type="button" class="btn_of_first_page btn-primary">CONTACT US</button>
+        <button type="button" class="btn_of_first_page btn-primary" onclick="togglePopup()">CONTACT US</button>
+    </div>
+    <div class="right_of_first_page">
+        <img class="right_img_of_first_page" src="./images/hero.png" alt="">
+    </div>
+</div>
+
+<form class="content" action="https://getform.io/f/akkgyoka" method="POST">
+  <div class="header">
+      <span>Talk to us</span> 
+      <div onclick="togglePopup()" class="close-btn"> 
+          x
+      </div>
+  </div>
+  <div class="form-floating">
+      <input type="email" name="email" class="custom-input form-control" id="floatingInput" placeholder="Work email*" required>
+      <label class="label" for="floatingInput">Work email*</label>
+  </div>
+  <div class="name-input">
+      <div class="form-floating">
+          <input type="text" name="first_name" class="custom-input input form-control" id="firstName" placeholder="First name" required>
+          <label class="label" for="firstName">First name</label>
+      </div>
+      <div class="form-floating">
+          <input type="text" name="last_name" class="custom-input input form-control" id="lastName" placeholder="Last name" required>
+          <label class="label" for="lastName">Last name</label>
+      </div>
+  </div>
+  <div class="input-fields form-check">
+      <input class="form-check-input" type="checkbox" value="1" id="agreeCheck" required>
+      <label class="form-check-label" for="agreeCheck">
+          I agree to Fyle's terms and conditions, and provide consent to send me communication.
+      </label>
+  </div>
+  <button type="submit" class="btn_of_first_pop btn-primary">Contact Us</button>
+</form>
+
+ 
+<div id="backdrop"></div>
+
+
+
+<div class="second_page">
+  <div class="second-page-inner">
+ <h4>WHAT WE DO</h4>
+ <div class="second_para">
+    <h1 style="font-weight: bold;">SERVICES PROVIDE<br/>FOR YOU</h1>
+    <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque <br>
+        vitae ante at elit fringilla ac at purus, Morbi sed lacus nec risus finibus <br>
+        feugiat et fermentum</p>
+ </div>
+ <section class="product"> 
+   
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-image">
+
+                <img src="images/1.png" class="product-thumb w-370px h-526px" alt="">
+                <div class="cover-card">
+                  <img src="/images/cote.svg" width="57px" height="57px"alt="">
+                  <h3>WEB DEVELOPMENT</h3>
+                  <P>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. PellentesqueS</P>
+                    <button class="read-more" onclick="readMore()">READ MORE <img src="/images/arrow.svg"  alt=""></button>
+                 </div>
+            </div>
+          
         </div>
-        <div class="right_of_first_page">
-            <img class="right_img_of_first_page" src="./images/hero.png" alt="">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/2.png" class="product-thumb w-370px h-526px" alt="">
+                <div class="cover-card">
+                  <img src="/images/cote.svg" width="57px" height="57px"alt="">
+                  <h3>WEB DEVELOPMENT</h3>
+                  <P>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. PellentesqueS</P>
+                    <button class="read-more" onclick="readMore()">READ MORE <img src="/images/arrow.svg"  alt=""></button>
+                 </div>
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/3.png" class=" product-thumb " alt="">
+                <div class="cover-card">
+                  <img src="/images/cote.svg" width="57px" height="57px"alt="">
+                  <h3>WEB DEVELOPMENT</h3>
+                  <P>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. PellentesqueS</P>
+                    <button class="read-more" onclick="readMore()">READ MORE <img src="/images/arrow.svg"  alt=""></button>
+                 </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/2.png" class="product-thumb" alt="">
+                <div class="cover-card">
+                  <img src="/images/cote.svg" width="57px" height="57px"alt="">
+                  <h3>WEB DEVELOPMENT</h3>
+                  <P>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. PellentesqueS</P>
+                    <button class="read-more" onclick="readMore()">READ MORE <img src="/images/arrow.svg"  alt=""></button>
+                 </div>
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/3.png"  class="product-thumb" alt="">
+                <div class="cover-card">
+                  <img src="/images/cote.svg" width="57px" height="57px"alt="">
+                  <h3>WEB DEVELOPMENT</h3>
+                  <P>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. PellentesqueS</P>
+                    <button class="read-more" onclick="readMore()">READ MORE <img src="/images/arrow.svg"  alt=""></button>
+                 </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/1.png" class="product-thumb" alt="">
+                <div class="cover-card">
+                  <img src="/images/cote.svg" width="57px" height="57px"alt="">
+                  <h3>WEB DEVELOPMENT</h3>
+                  <P>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. PellentesqueS</P>
+                    <button class="read-more" onclick="readMore()">READ MORE <img src="/images/arrow.svg"  alt=""></button>
+                 </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/3.png" class="product-thumb"  alt="">
+                <div class="cover-card">
+                  <img src="/images/cote.svg" width="57px" height="57px"alt="">
+                  <h3>WEB DEVELOPMENT</h3>
+                  <P>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. PellentesqueS</P>
+                    <button class="read-more" >READ MORE <img src="/images/arrow.svg"  alt=""></button>
+                 </div>
+            </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <div class="btn-div">
+   <div  class="pre-btn"><img src="images/arrow.png" alt=""></div>
+    <div class="nxt-btn"><img src="images/arrow.png" alt=""></div>
+    <div class="nt-btn"><img src="images/arrow.png" alt=""></div>
+   </div>
+</section>
+</div>
+</div>
+
+
+
+
+
+<div class="third-page">
+  <h4>WHY CHOOSE US</h4>
+  <h1 style="font-weight: bold;">WHY WE ARE BEST</h1>
+
+  <div class="card-container" id="card-container"></div>
+</div>
+
+
+<div class="fourth-page">
+    <div class="forth-heading">
+      <h4>OUR PROJECT</h4>
+      <h1>WHY WE ARE BEST</h1>
+    </div>
+  <div>
+  <div class="fourth-main">
+      <div class="img-card left-card">
+        <img src="/images/image.png" alt="">
+      </div>
+      <div class="img-card-btn right-card">
+       <div onclick="functionChange1()" class="info-card">
+        <h5>Genderless Kei – Japan’s Hot</h5>
+        <p>Set to launch on the manufacturer’s <br> new A330neo aircraft in 2017, it’s <br>
+          offering lots of</p>
+       </div>
+       <div onclick="functionChange2()" class="info-card">
+        <h5>Better Strategy & Quality</h5>
+        <p>Set to launch on the manufacturer’s <br> new A330neo aircraft in 2017, it’s <br>
+          offering lots of</p>
+       </div>
+       <div onclick="functionChange3()" class="info-card">
+        <h5>Genderless Kei – Japan’s Hot</h5>
+        <p>Set to launch on the manufacturer’s <br> new A330neo aircraft in 2017, it’s <br>
+          offering lots of</p>
+       </div>
+      </div>
+</div>
+</div>
+
+<div class="fifth-page">
+  <div class="fifth-main">
+    <div class="forth-heading">
+      <h4>OUR PROJECT</h4>
+      <h1>WHY WE ARE BEST</h1>
+    </div>
+    <div class="card-section1">
+      <div class="card1">
+        <img src="/images/heart (2).svg" alt="Heart Icon">
+        <span>199 +</span>
+        <p>Staticfied Customers</p>
+      </div>
+      <div class="card1">
+        <img src="/images/clock (3).svg" alt="Clock Icon">
+        <span>1591 +</span>
+        <p>Days Of Operation</p>
+      </div>
+      <div class="card1">
+        <img src="/images/check.svg" alt="Check Icon">
+        <span>283 +</span>
+        <p>Complete Project</p>
+      </div>
+      <div class="card1">
+        <img src="/images/cup.svg" alt="Cup Icon">
+        <span>75 +</span>
+        <p>Win Awards</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="feedback-container">
+  <div  class="forth-heading">
+      <h4>CLIENT'S FEEDBACK</h4>
+      <h1>PEOPLE SAY'S ABOUT US !</h1>
+  </div>
+  <div class="para-fe">
+    <p> <img src="/images/Quotemarks-left.svg" alt="">Jannat Tumpa The standard chunk of Lorem Ipsum used since the 1500s <br>is reproduced below for those interested. Sections Bonorum et Malorum original.</p>
+  </div>
+  <div class="para-me">
+    <span>JANNAT TUMPA </span>
+    <p> - COO, AMERIMAR ENTERPRISES, INC.</p>
+  </div>
+</div>
+
+<div class="feedback-page">
+  <div class="feedback-content">
+   <img src="/images//Group 500.png" alt="">
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="./index.js"></script>
 </body>
 </html>
